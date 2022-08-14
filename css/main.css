@@ -187,7 +187,7 @@ main {
   border-color: #038F82;
 }
 
-#form-area input.error {
+#form-area input:invalid {
   border-color: #dc2626;
 }
 
