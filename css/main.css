@@ -9,9 +9,10 @@ body {
   color: #262626;
 }
 
-@media only screen and (max-width:  700px) {
+@media only screen and (max-width:  800px) {
   body {
-    flex-direction: column;   
+    flex-direction: column;
+    gap: 3em;
   }
   
   #banner {
@@ -24,15 +25,19 @@ body {
   #banner #credits {
     display: none;
   }
+
+  #form-area > form > div > div {
+    width: 100% !important;
+  }
 }
 
-@media only screen and (min-width:  700px) {
+@media only screen and (min-width:  800px) {
   body {
     flex-direction: row;
   }
   
   #banner {
-    width: 45vw;
+    width: 40vw;
     max-width: 600px;
     background-position: center;
   }
@@ -48,6 +53,7 @@ body {
   flex-direction: column;
   padding: 3em 0 3em 0;
   user-select: none;
+  flex-shrink: 0;
 }
 
 #banner > .container {
@@ -67,7 +73,7 @@ body {
   margin: 0;
   text-align: center;
   font-size: 4em;
-  text-transform: uppercase;
+  text-transform: uppercase; 
   font-weight: 300;
   align-self: center;
 }
@@ -96,7 +102,101 @@ body {
 /********/
 
 main {
-  width: auto;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+#message-area,
+#form-area > form > div,
+#sign-in {
+  padding: 0 2em 0 2em;
+}
+
+
+#message-area {
+  font-size: 1.8em;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+#form-area {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3em;
+  gap: 2em;
+}
+
+#form-area > form > div:first-child {
+  background-color: #f0fdfa;
+  box-shadow: 0px 5px 5px #d4d4d4;
+  border-radius: 15px;
+  padding: 2em;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+#form-area > form > div:first-child > p {
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 1.5em;
+}
+
+#form-area > form > div > div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.0em;
+  gap: 0.5em;
+}
+
+#form-area button {
+  margin-top: 2em;
+  background-color: #2C8D76;
+  color: #f5f5f5;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5em;
+  padding: 0.5em 1em 0.5em 1em;
+}
+
+#form-area button {
+  cursor: pointer;
+}
+
+#form-area label {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+#form-area input {
+  font-size: inherit;
+  border: 2px solid #262626;
+  border-radius: 10px;
+  padding: 0.5em;
+  outline: none;
+}
+
+#form-area input:focus {
+  border-color: #038F82;
+}
+
+#form-area input.error {
+  border-color: #dc2626;
+}
+
+#sign-in {
+  font-size: 1.2em;
+  margin-bottom: 5em;
+}
+
+#sign-in a {
+  text-decoration: none;
+  color: #038F82;
 }
